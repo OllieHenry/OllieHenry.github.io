@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    width: 40%;
+    min-width: 600px;
+    margin: 0 auto;
+    background-color: #d0f0ff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+    .content {
+        width: auto;
+        min-width: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 15px;
+    }
+}
