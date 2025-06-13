@@ -14,28 +14,28 @@ body {
 }
 
 a:link {
-    color: pink;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: pink;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: pink;
-    background-color: transparent;
-    text-decoration: underline;
-  }
+color: red;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:visited {
+color: red;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:active {
+color: red;
+background-color: transparent;
+text-decoration: none;
+}
 
 @media (max-width: 768px) {
     .content {
