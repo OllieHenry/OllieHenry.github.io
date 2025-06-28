@@ -1,0 +1,13 @@
+title: Ollie Henry
+description: ""
+baseurl: ""
+url: "https://olliehenry.github.io"
+permalink: /:title
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
+
+theme: null
+exclude: [Gemfile, Gemfile.lock, node_modules]
