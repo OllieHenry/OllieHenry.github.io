@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shortcuts to Lebesgue? | Ollie Henry</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  </head>
+
+  <body>
+    <div class="content">
+      <h1 id="can-we-get-to-the-lebesgue-integral-without-measure-theory">Can we get to the Lebesgue integral without measure theory?</h1>
+
+<h2 id="0-questions-after-riemann">0: Questions after Riemann</h2>
+
+<p>For two functions \(f, g : [0,1] \to \mathbb{R}\), we say that \(f \leq g\) if, for all \(x\), we have \(f(x) \leq g(x)\).</p>
+
+<p>Let \((f_n)\) be a sequence of functions \(f_n : [0,1] \to \mathbb{R}\) which is bounded by \(g\) (so that, for all \(n\), we have \(\lvert f_n \rvert \leq g\)). Suppose that for each \(x\), the limit</p>
+
+\[\lim_{n \to \infty} f_n(x)\]
+
+<p>exists. Then we can define a function \(f\) by</p>
+
+\[f(x) = \lim_{n \to \infty} f_n(x)\]
+
+<p>which we call the “<strong>pointwise limit</strong> of \(f_n\)”, and say \(f_n \to f\) <strong>pointwise</strong>.</p>
+
+<p>If each \(f_n\) is Riemann integrable, and \(g\) is Riemann integrable, we don’t necessarily have that \(f\) is also Riemann integrable.</p>
+
+<blockquote>
+  <p>For example, let \((q_n)\) be an enumeration of the rationals in \([0,1]\), let \(Q_n = \{q_0, q_1, \dots, q_n\}\), and let \(f_n = \mathbb{1}_{Q_n}\). Then \(f = \mathbb{1_Q}\) on \([0,1]\) and we can choose \(g = 1\). \(g\), and each \(f_n\), are Riemann integrable with</p>
+</blockquote>
+
+<blockquote>
+\[\int_0^1 f_n \, dx = 0\]
+</blockquote>
+
+<blockquote>
+  <p>but \(f\) is not Riemann integrable.</p>
+</blockquote>
+
+<blockquote>
+  <p>(This is because both \(\mathbb{Q}\) and \(\mathbb{R \setminus Q}\) are dense in \(\mathbb{R}\), so \(f\) will take values \(0\) and \(1\) on any subinterval of \([0,1]\) with non-zero width.)</p>
+</blockquote>
+
+<p>However, if each \(f_n\) is Lebesgue integrable, and \(g\) is Lebesgue integrable, we always have that \(f\) is also Lebesgue integrable, with</p>
+
+\[\int_0^1 f \, dx = \lim_{n \to \infty} \int_0^1 f_n \, dx\]
+
+<p>This is a special case of the <strong>dominated convergence theorem</strong>. It’s one of the key advantages of Lebesgue integration over Riemann integration because it gives a very general sufficient condition for when you can swap a limit with an integral.</p>
+
+<!-- Any Riemann integrable function is Lebesgue integrable, with the same value. So we could say that if each $$f_n$$ is Riemann integrable, and $$g$$ is Riemann integrable, then $$f$$ is also Lebesgue integrable. -->
+
+<p>One problem with the Lebesgue integral is that it has its basis in measure theory, making it complicated to construct directly, because you need to prove the existence and uniqueness of the Lebesgue measure first. (Happily, once you do have the Lebesgue measure, the definition of the Lebesgue integral is very simple!)</p>
+
+<p>I’m interested in whether we can construct, or at least prove the existence of, a better integral without measure theory. What paths can we take towards a better integral, and which nice properties of the Lebesgue integral can we achieve?</p>
+
+<h2 id="1-brute-force">1. Brute force</h2>
+
+<p>Let’s start by focusing on the dominated convergence theorem: can we recover it in our new integral? To begin with, it’s worth giving a proper statement of the DCT, rather than just an example. Below is the DCT adapted for our purposes:</p>
+
+<blockquote>
+  <p>Let \((f_n)\) be a sequence of real-valued Lebesgue integrable functions on a bounded interval \(U \subseteq \mathbb{R}\). Suppose there is a pointwise limit \(f_n \to f\) and a Lebesgue integrable function \(g: U \to \mathbb{R}\) such that, for all \(n\), we have \(\lvert f_n \rvert \leq g\). Then \(f\) is Lebesgue integrable, and</p>
+</blockquote>
+
+\[\lim_{n \to \infty} \int_U \lvert f - f_n \rvert \, dx = 0\]
+
+<blockquote>
+  <p>so in particular,</p>
+</blockquote>
+
+\[\lim_{n \to \infty} \int_U f_n \, dx = \int_U f \, dx\]
+
+<p>That’s our goal. Our first strategy is brute force: what if we just assume it’s true? We can do this by using the DCT as a definition. Here’s the definition of our first new integral. The name “first integral” is already taken by a concept in differential equations, so we’ll call this the 1-integral:</p>
+
+<blockquote>
+  <p>Given a bounded interval \(U \subseteq \mathbb{R}\),</p>
+</blockquote>
+
+<ul>
+  <li>Any function which is Riemann integrable on \(U\) is 1-integrable on \(U\), with the same value.</li>
+  <li>If \((f_n)\) is a sequence of 1-integrable real functions on \(U\) with a pointwise limit \(f\), and if \((f_n)\) is bounded by some 1-integrable \(g: U \to \mathbb{R}\), then \(f\) is 1-integrable, and</li>
+</ul>
+
+\[\lim_{n \to \infty} \int_U \lvert f - f_n \rvert \, dx = 0\]
+
+<blockquote>
+  <p>so in particular,</p>
+</blockquote>
+
+\[\lim_{n \to \infty} \int_U f_n \, dx = \int_U f \, dx\]
+
+<p>This raises a couple of questions: firstly, is this well-defined? What if two different sequences for some \(f\) give two different values for its integral? And secondly, what sorts of functions are 1-integrable?</p>
+
+<p>We can cheat for the first question by using what we already know about the Lebesgue integral. If a function is Riemann integrable, it is Lebesgue integrable. This fact, combined with the DCT, means that every 1-integrable function is Lebesgue integrable. Argument to be continued</p>
+
+    </div>
+  </body>
+</html>
