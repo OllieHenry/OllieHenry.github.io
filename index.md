@@ -6,7 +6,7 @@ title: "Ollie's Site"
 # Ollie's Site
 
 <p>
-  Last modified 2025-06-29. Created 2025-06-07. I can be reached at
+  Last modified 2025-08-07. Created 2025-06-07. I can be reached at
   <a href="mailto:olliehenry16@gmail.com">olliehenry16@gmail.com</a>.
 </p>
 
@@ -26,10 +26,10 @@ For most of the free time I spend working on something, that something
 is maths. My interests are mostly in logic and functional analysis. Some
 books I'm working through (at vastly different speeds) are:
 
-- *Fast Track to Forcing* (currently most of my time)
-- *An Invitation to Model Theory* (Kirby)
-- *Introduction to Modern Analysis* (Kantorovitz and Viselter)
-- *Moonshine Beyond the Monster*
+- _Fast Track to Forcing_ (currently most of my time)
+- _An Invitation to Model Theory_ (Kirby)
+- _Introduction to Modern Analysis_ (Kantorovitz and Viselter)
+- _Moonshine Beyond the Monster_
 
 There are (many!) others I've started work on, but I don't spend enough
 time on them to warrant mentioning.
