@@ -34,10 +34,8 @@ books I'm working through (at vastly different speeds) are:
 There are (many!) others I've started work on, but I don't spend enough
 time on them to warrant mentioning.
 
-Besides that, I've recently started a
-[machine learning theory project](https://github.com/OllieHenry/overparametrized)
-which explores overparametrized models.
-
 ## Posts
 
 [How to get a Czech digital nomad visa](visa)
+
+[Constructing a transcendental number, easily](transcendental)
